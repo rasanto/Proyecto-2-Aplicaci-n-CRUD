@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de ingreso</title>
+    <link rel="stylesheet" href="stilos_crud.css">
+</head>
+<body>
+    <table>
+     <tr>
+        <td>
+            <form action="" onsubmit="onFormSubmit();">
+                <div>
+                    <label for="">Nombre Completo</label>
+                    <input type="Nombre completo" id="nombre">
+                </div>
+                <div>
+                    <label for="">Grado</label>
+                    <input type="Grado" id="grado">
+                </div>
+                <div>
+                    <label for="">Direccion</label>
+                    <input type="Direccion" id="direccion">
+                </div>
+                <div>
+                    <input type="submit" value="Submit" id="sumit">
+                </div>
+            </form>
+        </td>
+        <td>
+            <table class="list" id="datos_estudiante">
+              <thead>
+                  <tr>
+                      <th>Nombre Completo</th>
+                      <th>Grado</th>
+                      <th>Direccion</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+        </td>
+     </tr>
+    </table>
+
+    <script src="crud.js"></script>
+</body>
+</html>
