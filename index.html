@@ -9,9 +9,9 @@
 </head>
 <body>
     <table>
-     <tr>
-        <td>
-            <form action="" onsubmit="onFormSubmit();">
+      <tr>
+         <td>
+             <form action="" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
                 <div>
                     <label for="">Nombre Completo</label>
                     <input type="Nombre completo" id="nombre">
@@ -25,28 +25,29 @@
                     <input type="Direccion" id="direccion">
                 </div>
                 <div>
-                    <input type="submit" value="Submit" id="sumit">
+                    <input type="submit" value="Submit">
                 </div>
             </form>
-        </td>
-        <td>
+         </td>
+         <td>
             <table class="list" id="datos_estudiante">
-              <thead>
+               <thead>
                   <tr>
                       <th>Nombre Completo</th>
                       <th>Grado</th>
                       <th>Direccion</th>
                       <th></th>
-                  </tr>
-              </thead>
-              <tbody>
+                   </tr>
+               </thead>
+               <tbody>
 
-              </tbody>
-            </table>
-        </td>
+               </tbody>
+             </table>
+         </td>
      </tr>
     </table>
 
     <script src="crud.js"></script>
 </body>
 </html>
+
