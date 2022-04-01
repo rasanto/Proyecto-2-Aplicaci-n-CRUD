@@ -1,6 +1,12 @@
+var SelectedRow = null;
+
 function onFormSubmit(){
     var formData = readFormData();
-    insetNewRecord(formData)
+    
+    if (SelectedRow == null) {
+        insetNewRecord(formData);
+    }else
+    updateRecord(formData)
     resetForm()
 }
 
@@ -23,7 +29,7 @@ function insetNewRecord(dato) {
      cell3.innerHTML = dato.direccion;
      cell3 = newRow.insertCell(3);
      cell3.innerHTML =  ` <input type="button" value="Edit" onClick="onEdit(this)">
-                          <input type="button" value="delite">`;
+                          <input type="button" value="delite" onClick="onDelite(this)">`;
 }
 
 
@@ -32,6 +38,7 @@ function resetForm() {
     document.getElementById("nombre").value = "";
     document.getElementById("grado").value = "";
     document.getElementById("direccion").value = "";
+    var SelectedRow = null;
 }
 
 function onEdit(tb) {
@@ -39,4 +46,19 @@ function onEdit(tb) {
     document.getElementById("nombre").value = SelectedRow.cells[0].innerHTML;
     document.getElementById("grado").value = SelectedRow.cells[1].innerHTML;
     document.getElementById("direccion").value = SelectedRow.cells[2].innerHTML;
+}
+
+function updateRecord(formData) {
+    SelectedRow.cells[0].innerHTML = formData.nombre;
+    SelectedRow.cells[1].innerHTML = formData.grado;
+    SelectedRow.cells[2].innerHTML = formData.direccion;
+}
+
+function onDelite(tb) {
+    if (confirm('Estas seguro que quieres eliminar los datos')) {
+        row = tb.parentElement.parentElement
+    document.getElementById("datos_estudiante").deleteRow(row.rowIndex);
+    resetForm()
+    }
+    
 }
