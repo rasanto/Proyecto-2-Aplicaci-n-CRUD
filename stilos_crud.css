@@ -1,0 +1,109 @@
+
+body{
+    height:max-content;
+    margin-top: 5%;
+}
+
+header {
+    background-color: black;
+    color: floralwhite;
+    display: flex;
+}
+header img{
+    width: 3%;
+    height: 3%;
+margin-right: 5%;
+
+
+}
+header h1{
+    
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+    
+
+
+table form div{
+     display: grid;
+     columns: 1;
+     margin: 5%;
+    
+}
+
+
+
+footer{
+    background-color: black;
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    
+
+}  
+footer a{
+    color: white;
+}
+
+
+.social-bar{
+    font-size: 20px;
+    display: flex;
+   justify-content: space-between;
+    text-decoration: none;
+    color:black;
+    padding: 15px;
+}
+.social-bar a:hover{
+    color: blue;
+    font-size: 30px;
+}
+
+.social-bar .icon-facebook{
+    margin: 15px;
+}
+.social-bar .icon-twitter{
+    margin: 15px;
+}
+
+.social-bar .icon-instagram{
+    margin: 15px;
+}
+table{
+    width: 100%;
+}
+.tr{
+    display: flex;
+}
+
+.tr #td{
+    margin-left: 10%;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    border: 2cm black;
+}
+
+@media (max-width:720px)  {
+    body {
+        background-color: bisque;
+    }
+    .tr{
+        display: grid
+      
+    }
+
+    .tr #td{
+        width: 60%;
+    }
+}
+
+
+
+
+
+

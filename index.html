@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de ingreso</title>
     <link rel="stylesheet" href="stilos_crud.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <img src="./ucamp.png" alt="">
+         <h1>Registro</h1>
+    </header>
     <table>
-      <tr>
+      <tr class="tr">
          <td>
-             <form action="" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+             <form action="" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="for">
                 <div>
                     <label for="">Nombre Completo</label>
                     <input type="Nombre completo" id="nombre">
@@ -27,9 +32,15 @@
                 <div>
                     <input type="submit" value="Submit">
                 </div>
+               
             </form>
+            <div>
+                <input type="button" value="Estudiante existente" onclick="obtener_local()">
+                <input type="rs" id="local-estudiante">
+                </div>
          </td>
-         <td>
+         
+         <td id="td">
             <table class="list" id="datos_estudiante">
                <thead>
                   <tr>
@@ -46,8 +57,18 @@
          </td>
      </tr>
     </table>
+    
+
 
     <script src="crud.js"></script>
+
+    <footer>
+        <div class="social-bar">
+            <a href="#" class="icon-facebook"></a>
+            <a href="#" class="icon-twitter"></a>
+            <a href="#" class="icon-instagram"></a>
+        </div>
+    </footer>
 </body>
 </html>
 

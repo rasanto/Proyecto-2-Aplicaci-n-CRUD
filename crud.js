@@ -1,13 +1,16 @@
 var SelectedRow = null;
 
 function onFormSubmit(){
-    var formData = readFormData();
+    var formData = readFormData();   
     
-    if (SelectedRow == null) {
+    if (SelectedRow === null) {
         insetNewRecord(formData);
+        localStorage.setItem(formData.nombre, JSON.stringify(formData));
     }else
     updateRecord(formData)
+    localStorage.setItem(formData.nombre, JSON.stringify(formData));
     resetForm()
+ 
 }
 
 function readFormData() {
@@ -30,15 +33,16 @@ function insetNewRecord(dato) {
      cell3 = newRow.insertCell(3);
      cell3.innerHTML =  ` <input type="button" value="Edit" onClick="onEdit(this)">
                           <input type="button" value="delite" onClick="onDelite(this)">`;
+                 
 }
 
 
-
+ 
 function resetForm() {
     document.getElementById("nombre").value = "";
     document.getElementById("grado").value = "";
     document.getElementById("direccion").value = "";
-    var SelectedRow = null;
+    SelectedRow = null;
 }
 
 function onEdit(tb) {
@@ -46,6 +50,7 @@ function onEdit(tb) {
     document.getElementById("nombre").value = SelectedRow.cells[0].innerHTML;
     document.getElementById("grado").value = SelectedRow.cells[1].innerHTML;
     document.getElementById("direccion").value = SelectedRow.cells[2].innerHTML;
+    localStorage.removeItem(document.getElementById("nombre").value)
 }
 
 function updateRecord(formData) {
@@ -58,7 +63,21 @@ function onDelite(tb) {
     if (confirm('Estas seguro que quieres eliminar los datos')) {
         row = tb.parentElement.parentElement
     document.getElementById("datos_estudiante").deleteRow(row.rowIndex);
+
     resetForm()
     }
-    
+ 
 }
+
+
+
+function obtener_local() {
+  let dato = document.getElementById("local-estudiante").value;
+  let local = JSON.parse(localStorage.getItem(dato));
+
+  
+  insetNewRecord(local)
+
+  };
+
+
